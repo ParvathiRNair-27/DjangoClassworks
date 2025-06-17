@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Searchbook</title>
+    {% endblock  %}
+{% block content %}
+<div class="container w-75 mt-3 p-5">
+    <h2>Search Books</h2>
+{% if books %}
+    <table class ="table table-bordered text-centered">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Languages</th>
+            <th>Pages</th>
+            <th>Cover</th>
+
+        </tr>
+        {% for b in books %}
+        <tr>
+            <td>{{ b.Title }}</td>
+            <td>{{ b.Author }}</td>
+            <td>{{ b.Price }}</td>
+            <td>{{ b.Language }}</td>
+            <td>{{ b.Pages }}</td>
+            <td><img src="{{ b.Image.url}}"height="150px" width="150px"></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+<h2>No Search Results</h2>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>Welcome to Home page
+    {% if user.is_authenticated %} <!-if user is logged in-->
+    {{user.username}}
+<a href=" {% url 'password_change' %}">Change Password</a>
+<a href="SignOutView"> LOGOUT</a>
+{% else %}
+    Guest
+    <br>
+    <a href="signupView"> REGISTER</a>
+    <a href="SigninView"> LOGIN</a>
+    {% endif %}</h1>
+
+
+
+</body>
+
+</html>

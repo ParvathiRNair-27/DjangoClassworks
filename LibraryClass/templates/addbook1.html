@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Home</title>
+    {% endblock  %}
+{% block content %}
+<h1><center>ADD BOOK 1(user defined) </center></h1>
+
+<div class="container w-50 border border-2 px-5 pb-5 pt-5 mt-5">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+     <div class="mb-3">
+         <label class="from-label">Title</label>
+         <input type="text"  name="t" class="form-control">
+     </div>
+    <div class="mb-3">
+         <label class="from-label">Author</label>
+         <input type="text" name="a" class="form-control">
+     </div>
+    <div class="mb-3">
+         <label class="from-label">Price</label>
+         <input type="number" name="p" class="form-control">
+     </div>
+    <div class="mb-3">
+         <label class="from-label">Pages</label>
+         <input type="number" name="g" class="form-control">
+     </div>
+    <div class="mb-3">
+         <label class="from-label">Language</label>
+         <input type="text" name="l"  class="form-control">
+     </div>
+        <div class="mb-3">
+            <label class="from-label">Image</label>
+            <input type="file" name="i"  class="form-control">
+        </div>
+    <input type="submit" >
+
+</form>
+</div>
+{% endblock %}
+

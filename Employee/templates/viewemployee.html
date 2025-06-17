@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+    {% block title %}
+<title>Employee Detail</title>
+    {% endblock %}
+{% block content %}
+<div class="container w-50 mx-auto mt-4 border border-2">
+<center><h2>Employee Detail</h2></center>
+    <div class="card mb-3 mx-auto" style="max-width:95%;">
+  <div class="row g-0">
+    <div class="col-md-4 p-3">
+      <img src="{{ Employee.Image.url}}" class="img-fluid rounded-start" height="400px" width="100%" alt="...">
+    </div>
+        <table class ="table table-bordered mt-4 text-centered">
+            <tr>
+                <th>Name</th>
+                <td>{{Employee.Name}}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{Employee.Age}}</td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td>{{Employee.Salary}}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{Employee.Designation}}</td>
+            </tr>
+            <tr>
+                <th>Place</th>
+                <td>{{Employee.Place}}</td>
+            </tr>
+            <tr>
+                <th>Department Name</th>
+                <td>{{Employee.Department_Name}}</td>
+            </tr>
+
+        </table>
+        <div class="d-flex justify-content-evenly">
+        <a class="btn btn-danger" href="{% url 'deleteemployee' Employee.id %}">Delete</a>
+         <a class="btn btn-danger" href="{% url 'edit_view' Employee.id %}">Edit</a>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

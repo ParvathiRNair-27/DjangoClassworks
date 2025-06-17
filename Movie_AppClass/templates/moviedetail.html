@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+    {% block title %}
+<title>Movie Detail</title>
+    {% endblock %}
+{% block content %}
+<div class="container w-50 mx-auto mt-4 border border-2">
+<center><h2>Movie Detail</h2></center>
+    <div class="card mb-3 mx-auto" style="max-width:95%;">
+  <div class="row g-0">
+    <div class="col-md-4 p-3">
+      <img src="{{ movie.image.url}}" class="img-fluid rounded-start" height="400px" width="100%" alt="...">
+    </div>
+    <div class="col-md-8 ">
+      <div class="card-body p-4">
+        <h5 class="card-title">{{movie.movie_name}}</h5>
+        <p class="card-text">{{movie.description}}</p>
+        <p class="card-text">{{movie.director_name}}</p>
+      </div>
+        <div class="d-flex justify-content-evenly">
+        <a class="btn btn-danger" href="{% url 'deletemovie' movie.id %}">Delete</a>
+         <a class="btn btn-danger" href="{% url 'editmovie' movie.id %}">Edit</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!--<table class ="table table-bordered mt-4 text-centered">-->
+<!--    <tr>-->
+<!--        <th>Movie Title</th>-->
+<!--        <td>{{ movie.movie_name}}</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <th>Movie_Director</th>-->
+<!--        <td>{{ movie.director_name}}</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <th>Movie_Description</th>-->
+<!--        <td>{{ movie.description}}</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <th>Movie_Year</th>-->
+<!--        <td>{{ movie.year}}</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <th>Language</th>-->
+<!--        <td>{{ movie.language}}</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <th>Cover</th>-->
+<!--        <td><img src = "{{ movie.image.url}}" height="150px" width="150px"></td>-->
+<!--    </tr>-->
+<!--</table>-->
+</div>
+
+
+{% endblock %}
